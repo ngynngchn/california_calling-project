@@ -1,0 +1,23 @@
+@mixin bgColor($color, $bg-color) {
+	background-color: $color;
+	color: $bg-color;
+}
+@mixin stroke($stroke, $fill) {
+	-webkit-text-stroke: 0.01px $stroke;
+	-webkit-text-fill-color: $fill;
+}
+
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin absolute($bottom, $left, $margin) {
+	position: absolute;
+	z-index: 3;
+	width: 25vw;
+	margin: $margin;
+	bottom: $bottom;
+	right: $left;
+}
