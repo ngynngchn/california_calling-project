@@ -100,7 +100,8 @@ header article.logo img {
   background: url(../img/map.svg) 100% 77%/39% no-repeat;
 }
 #statistic h2 {
-  width: 73vw;
+  width: 70vw;
+  line-height: 7rem;
 }
 #statistic article:first-of-type {
   margin-top: 8vw;
