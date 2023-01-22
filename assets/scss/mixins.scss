@@ -21,3 +21,13 @@
 	bottom: $bottom;
 	right: $left;
 }
+
+@mixin left-position($top, $left) {
+	top: $top;
+	left: $left;
+}
+
+@mixin right-position($top, $right) {
+	top: $top;
+	right: $right;
+}

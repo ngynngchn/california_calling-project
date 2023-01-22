@@ -45,9 +45,11 @@ p {
 	font-size: 1rem;
 	font-family: "Work Sans";
 	font-variation-settings: "wght" 600;
-	margin-block: 2vw;
+	margin: 2vw 0;
 	line-height: 2rem;
 }
+
+/* ========== BUTTON ========== */
 
 button {
 	all: unset;
@@ -107,50 +109,43 @@ header {
 #action {
 	@include bgColor(#fff, #000);
 	position: relative;
-	height: 300vh;
+	article {
+		margin: 0 auto;
+		padding: 30vw 0 17vw;
+		width: 33vw;
+		p:last-of-type {
+			margin: 1500px 0 0;
+		}
+	}
 	img {
 		position: absolute;
 	}
+	.s-img {
+		width: 240px;
+	}
+	.l-img {
+		width: 300px;
+	}
 	.pic1 {
-		right: 150px;
-		top: -90px;
+		@include right-position(-90px, 150px);
 	}
 	.pic2 {
-		top: 250px;
-		left: 40px;
+		@include left-position(250px, 40px);
 	}
-
 	.pic3 {
-		right: 0;
-		top: 600px;
+		@include right-position(600px, 0);
 	}
-
 	.pic4 {
-		left: 300px;
-		top: 900px;
+		@include left-position(900px, 300px);
 	}
-
 	.pic5 {
-		right: 200px;
-		top: 1000px;
+		@include right-position(1000px, 200px);
 	}
-
 	.pic6 {
-		left: 0px;
-		bottom: 1000px;
+		@include left-position(1340px, 0);
 	}
 	.pic7 {
-		right: 200px;
-		bottom: 600px;
-	}
-	article {
-		margin: 0 auto;
-		padding: 30vw 0 100vw;
-		width: 33vw;
-	}
-	p {
-		margin: 1rem auto;
-		width: 33vw;
+		@include right-position(1690px, 240px);
 	}
 }
 /* ========== GOLDEN BEAR ========== */
@@ -158,11 +153,11 @@ header {
 #golden-bear {
 	@include bgColor(#000, #fff);
 	position: relative;
-	padding: 17vw 10vw 0;
+	padding: 15vw 10vw 0;
 	.images {
-		margin: 0 2rem;
 		position: relative;
 		top: 80px;
+		left: 40px;
 		img:first-of-type {
 			width: 48vw;
 		}
@@ -173,7 +168,7 @@ header {
 			position: absolute;
 			margin: 2rem;
 			bottom: 40px;
-			right: -80px;
+			right: -20px;
 		}
 	}
 	.circle {
@@ -190,11 +185,11 @@ header {
 
 #poppy-bear {
 	@include bgColor(#fff, #000);
-	padding: 25vw 10vw 5vw;
+	padding: 28vw 10vw 5vw;
 	.images {
-		margin: 2rem;
 		position: relative;
 		display: flex;
+		margin: 4vw 0;
 		img:first-of-type {
 			margin-left: auto;
 			width: 48vw;
@@ -205,7 +200,7 @@ header {
 			position: absolute;
 			margin: 2rem;
 			bottom: 80px;
-			left: -80px;
+			left: -20px;
 		}
 	}
 }
@@ -219,7 +214,7 @@ header {
 		}
 	}
 	.quote {
-		width: 33vw;
+		width: 34vw;
 		p {
 			margin-block: 1vw 0;
 		}
@@ -237,7 +232,7 @@ header {
 		margin-block: 1rem;
 	}
 	h4 {
-		width: 31vw;
+		width: 35vw;
 	}
 	button {
 		margin-top: 1rem;
@@ -249,17 +244,21 @@ header {
 	position: absolute;
 	transform: translateX(300px) rotate(45deg);
 	h2 {
+		padding: 1vw 0;
 		animation: run 3s infinite linear;
 		span {
 			@include stroke(#000, #fff);
 		}
 	}
 }
+/* ========== FOOTER ========== */
 
 footer {
 	@include bgColor(#000, #fff);
-	padding: 0 10vw 5vw;
 	@include flex;
+	padding: 0 10vw 5vw;
+	position: relative;
+	z-index: 0;
 	section {
 		.socials {
 			img {
