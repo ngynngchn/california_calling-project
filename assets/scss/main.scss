@@ -17,12 +17,14 @@ body {
 	overflow-x: hidden;
 }
 
+/* ========== GLOBAL STYLES ========== */
+
 h1,
 h2,
 h3,
 h4 {
 	font-family: Lora;
-	font-variation-settings: "wght" 400;
+	font-variation-settings: "wght" 600;
 }
 
 h1,
@@ -45,7 +47,7 @@ p {
 	font-size: 1rem;
 	font-family: "Work Sans";
 	font-variation-settings: "wght" 600;
-	margin: 2vw 0;
+	margin: 1vw 0;
 	line-height: 2rem;
 }
 
@@ -59,24 +61,24 @@ button {
 	padding: 15px 30px;
 	transition: ease 0.4s all;
 	&:hover {
-		background-color: #fff;
-		color: #000;
+		@include bgColor(#fff, #000);
 	}
 }
 
-/* ========== HEADER ========== */
+/* ========== (1)HEADER ========== */
 
 header {
 	@include bgColor(#000, #fff);
 	padding: 0 10vw 10vw;
 	text-align: center;
+	/* headline */
 	article {
 		padding-top: 5vw;
 		h1:last-of-type {
 			@include stroke(#fff, #000);
-			font-variation-settings: "wght" 600;
 		}
 	}
+	/* logo  */
 	article.logo {
 		@include flex;
 		img {
@@ -84,7 +86,7 @@ header {
 		}
 	}
 }
-/* ========== STATISTICS ========== */
+/* ========== (2.1)STATISTICS ========== */
 
 #statistic {
 	@include bgColor(#000, #fff);
@@ -100,21 +102,22 @@ header {
 	article {
 		margin: 5vw 0;
 		p {
-			margin: 0.5vw 0;
+			margin-block: 0.5vw;
 		}
 	}
 }
-/* ========== ACTION ========== */
+/* ========== (2.2)ACTION ========== */
 
 #action {
 	@include bgColor(#fff, #000);
 	position: relative;
+	/* text */
 	article {
 		margin: 0 auto;
 		padding: 30vw 0 17vw;
 		width: 33vw;
 		p:last-of-type {
-			margin: 1500px 0 0;
+			margin: 700px 0 0;
 		}
 	}
 	img {
@@ -127,28 +130,52 @@ header {
 		width: 300px;
 	}
 	.pic1 {
-		@include right-position(-90px, 150px);
+		@include absolute($t: -90px, $r: 150px);
 	}
 	.pic2 {
-		@include left-position(250px, 40px);
+		@include absolute($t: 250px, $l: 40px);
 	}
 	.pic3 {
-		@include right-position(600px, 0);
+		@include absolute($t: 600px, $r: 0);
 	}
 	.pic4 {
-		@include left-position(900px, 300px);
+		@include absolute($t: 900px, $l: 300px);
 	}
 	.pic5 {
-		@include right-position(1000px, 200px);
+		@include absolute($t: 1000px, $r: 200px);
 	}
 	.pic6 {
-		@include left-position(1340px, 0);
+		@include absolute($t: 1340px, $l: 0);
 	}
 	.pic7 {
-		@include right-position(1690px, 240px);
+		@include absolute($t: 1690px, $r: 240px, $z: 5);
 	}
 }
-/* ========== GOLDEN BEAR ========== */
+/* ========== (2.3)GOLDEN BEAR & POPPY BEAR ========== */
+.text {
+	@include flex;
+	.title {
+		width: 30vw;
+		p {
+			margin-block: 0 1vw;
+		}
+	}
+	.quote {
+		width: 35vw;
+		p {
+			margin-block: 1vw 0;
+		}
+	}
+}
+.images {
+	img:first-of-type {
+		width: 48vw;
+	}
+	img:last-of-type {
+		width: 25vw;
+	}
+}
+/* ========== (2.3)GOLDEN BEAR ========== */
 
 #golden-bear {
 	@include bgColor(#000, #fff);
@@ -158,30 +185,21 @@ header {
 		position: relative;
 		top: 80px;
 		left: 40px;
-		img:first-of-type {
-			width: 48vw;
-		}
 		img:last-of-type {
-			width: 25vw;
-			z-index: 3;
-
-			position: absolute;
+			@include absolute($b: 40px, $r: -20px, $z: 3);
 			margin: 2rem;
-			bottom: 40px;
-			right: -20px;
 		}
 	}
+	/* ========== (2.3.1)ANIMATED LOGO ========== */
+
 	.circle {
+		@include absolute($b: -250px, $r: -110px, $z: 1);
 		width: 25vw;
-		position: absolute;
-		bottom: -250px;
-		right: -110px;
-		z-index: 1;
-		animation: rotate 4s infinite linear;
+		animation: rotate 10s infinite linear;
 	}
 }
 
-/* ========== POPPY BEAR ========== */
+/* ========== (2.4)POPPY BEAR ========== */
 
 #poppy-bear {
 	@include bgColor(#fff, #000);
@@ -192,45 +210,21 @@ header {
 		margin: 4vw 0;
 		img:first-of-type {
 			margin-left: auto;
-			width: 48vw;
 		}
 		img:last-of-type {
-			width: 25vw;
-
-			position: absolute;
+			@include absolute($b: 80px, $l: -20px);
 			margin: 2rem;
-			bottom: 80px;
-			left: -20px;
 		}
 	}
 }
 
-.text {
-	@include flex;
-	.title {
-		width: 30vw;
-		p {
-			margin-block: 0 1vw;
-		}
-	}
-	.quote {
-		width: 34vw;
-		p {
-			margin-block: 1vw 0;
-		}
-	}
-}
-
-/* ========== JOIN ========== */
+/* ========== (2.5)JOIN ========== */
 
 #join {
 	@include bgColor(#000, #fff);
 	position: relative;
-	overflow: hidden;
 	padding: 7vw 10vw 5vw;
-	p {
-		margin-block: 1rem;
-	}
+	overflow: hidden;
 	h4 {
 		width: 35vw;
 	}
@@ -238,36 +232,42 @@ header {
 		margin-top: 1rem;
 	}
 }
+/* ========== (2.5.1)ANIMATED SIDEBANNER ========== */
 
 .banner {
 	@include bgColor(#fff, #000);
-	position: absolute;
-	transform: translateX(300px) rotate(45deg);
+	position: relative;
+	left: 200px;
+	transform: rotate(45deg);
+	width: 1250px;
+	position: relative;
 	h2 {
-		padding: 1vw 0;
-		animation: run 3s infinite linear;
+		padding: 1vw;
+		display: inline-block;
+		transform: translateX(100%);
+		animation: loop 6s infinite linear;
 		span {
 			@include stroke(#000, #fff);
 		}
 	}
+	h2:last-of-type {
+		@include absolute($l: 0px);
+		animation-delay: 3s;
+	}
 }
-/* ========== FOOTER ========== */
+/* ========== (3)FOOTER ========== */
 
 footer {
 	@include bgColor(#000, #fff);
 	@include flex;
 	padding: 0 10vw 5vw;
-	position: relative;
-	z-index: 0;
 	section {
 		.socials {
 			img {
 				width: 20px;
-			}
-		}
-		.credits {
-			p {
-				margin-block: 1rem;
+				&:hover {
+					cursor: pointer;
+				}
 			}
 		}
 	}
@@ -280,18 +280,16 @@ footer {
 
 /* ========== ANIMATIONS ========== */
 
-@keyframes run {
+/* banner animation -  (2.5)JOIN*/
+@keyframes loop {
 	from {
-		transform: translate(0);
-	}
-	50% {
-		transform: translate(30%);
+		transform: translateX(100%);
 	}
 	to {
-		transform: translate(0);
+		transform: translateX(-100%);
 	}
 }
-
+/* rotating cirlce animation - (2.3)GOLDEN BEAR */
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);

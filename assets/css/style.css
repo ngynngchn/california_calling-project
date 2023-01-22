@@ -23,12 +23,13 @@ body {
   overflow-x: hidden;
 }
 
+/* ========== GLOBAL STYLES ========== */
 h1,
 h2,
 h3,
 h4 {
   font-family: Lora;
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" 600;
 }
 
 h1,
@@ -51,7 +52,7 @@ p {
   font-size: 1rem;
   font-family: "Work Sans";
   font-variation-settings: "wght" 600;
-  margin: 2vw 0;
+  margin: 1vw 0;
   line-height: 2rem;
 }
 
@@ -69,20 +70,21 @@ button:hover {
   color: #000;
 }
 
-/* ========== HEADER ========== */
+/* ========== (1)HEADER ========== */
 header {
   background-color: #000;
   color: #fff;
   padding: 0 10vw 10vw;
   text-align: center;
+  /* headline */
+  /* logo  */
 }
 header article {
   padding-top: 5vw;
 }
 header article h1:last-of-type {
-  -webkit-text-stroke: 0.01px #fff;
+  -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: #000;
-  font-variation-settings: "wght" 600;
 }
 header article.logo {
   display: flex;
@@ -93,7 +95,7 @@ header article.logo img {
   width: 54px;
 }
 
-/* ========== STATISTICS ========== */
+/* ========== (2.1)STATISTICS ========== */
 #statistic {
   background-color: #000;
   color: #fff;
@@ -111,14 +113,15 @@ header article.logo img {
   margin: 5vw 0;
 }
 #statistic article p {
-  margin: 0.5vw 0;
+  margin-block: 0.5vw;
 }
 
-/* ========== ACTION ========== */
+/* ========== (2.2)ACTION ========== */
 #action {
   background-color: #fff;
   color: #000;
   position: relative;
+  /* text */
 }
 #action article {
   margin: 0 auto;
@@ -126,7 +129,7 @@ header article.logo img {
   width: 33vw;
 }
 #action article p:last-of-type {
-  margin: 1500px 0 0;
+  margin: 700px 0 0;
 }
 #action img {
   position: absolute;
@@ -138,89 +141,63 @@ header article.logo img {
   width: 300px;
 }
 #action .pic1 {
+  position: absolute;
   top: -90px;
+  left: auto;
+  bottom: auto;
   right: 150px;
+  z-index: 0;
 }
 #action .pic2 {
+  position: absolute;
   top: 250px;
   left: 40px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
 }
 #action .pic3 {
+  position: absolute;
   top: 600px;
+  left: auto;
+  bottom: auto;
   right: 0;
+  z-index: 0;
 }
 #action .pic4 {
+  position: absolute;
   top: 900px;
   left: 300px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
 }
 #action .pic5 {
+  position: absolute;
   top: 1000px;
+  left: auto;
+  bottom: auto;
   right: 200px;
+  z-index: 0;
 }
 #action .pic6 {
+  position: absolute;
   top: 1340px;
   left: 0;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
 }
 #action .pic7 {
+  position: absolute;
   top: 1690px;
+  left: auto;
+  bottom: auto;
   right: 240px;
+  z-index: 5;
 }
 
-/* ========== GOLDEN BEAR ========== */
-#golden-bear {
-  background-color: #000;
-  color: #fff;
-  position: relative;
-  padding: 15vw 10vw 0;
-}
-#golden-bear .images {
-  position: relative;
-  top: 80px;
-  left: 40px;
-}
-#golden-bear .images img:first-of-type {
-  width: 48vw;
-}
-#golden-bear .images img:last-of-type {
-  width: 25vw;
-  z-index: 3;
-  position: absolute;
-  margin: 2rem;
-  bottom: 40px;
-  right: -20px;
-}
-#golden-bear .circle {
-  width: 25vw;
-  position: absolute;
-  bottom: -250px;
-  right: -110px;
-  z-index: 1;
-  animation: rotate 4s infinite linear;
-}
-
-/* ========== POPPY BEAR ========== */
-#poppy-bear {
-  background-color: #fff;
-  color: #000;
-  padding: 28vw 10vw 5vw;
-}
-#poppy-bear .images {
-  position: relative;
-  display: flex;
-  margin: 4vw 0;
-}
-#poppy-bear .images img:first-of-type {
-  margin-left: auto;
-  width: 48vw;
-}
-#poppy-bear .images img:last-of-type {
-  width: 25vw;
-  position: absolute;
-  margin: 2rem;
-  bottom: 80px;
-  left: -20px;
-}
-
+/* ========== (2.3)GOLDEN BEAR & POPPY BEAR ========== */
 .text {
   display: flex;
   justify-content: space-between;
@@ -233,22 +210,83 @@ header article.logo img {
   margin-block: 0 1vw;
 }
 .text .quote {
-  width: 34vw;
+  width: 35vw;
 }
 .text .quote p {
   margin-block: 1vw 0;
 }
 
-/* ========== JOIN ========== */
+.images img:first-of-type {
+  width: 48vw;
+}
+.images img:last-of-type {
+  width: 25vw;
+}
+
+/* ========== (2.3)GOLDEN BEAR ========== */
+#golden-bear {
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  padding: 15vw 10vw 0;
+  /* ========== (2.3.1)ANIMATED LOGO ========== */
+}
+#golden-bear .images {
+  position: relative;
+  top: 80px;
+  left: 40px;
+}
+#golden-bear .images img:last-of-type {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 40px;
+  right: -20px;
+  z-index: 3;
+  margin: 2rem;
+}
+#golden-bear .circle {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: -250px;
+  right: -110px;
+  z-index: 1;
+  width: 25vw;
+  animation: rotate 10s infinite linear;
+}
+
+/* ========== (2.4)POPPY BEAR ========== */
+#poppy-bear {
+  background-color: #fff;
+  color: #000;
+  padding: 28vw 10vw 5vw;
+}
+#poppy-bear .images {
+  position: relative;
+  display: flex;
+  margin: 4vw 0;
+}
+#poppy-bear .images img:first-of-type {
+  margin-left: auto;
+}
+#poppy-bear .images img:last-of-type {
+  position: absolute;
+  top: auto;
+  left: -20px;
+  bottom: 80px;
+  right: auto;
+  z-index: 0;
+  margin: 2rem;
+}
+
+/* ========== (2.5)JOIN ========== */
 #join {
   background-color: #000;
   color: #fff;
   position: relative;
-  overflow: hidden;
   padding: 7vw 10vw 5vw;
-}
-#join p {
-  margin-block: 1rem;
+  overflow: hidden;
 }
 #join h4 {
   width: 35vw;
@@ -257,22 +295,37 @@ header article.logo img {
   margin-top: 1rem;
 }
 
+/* ========== (2.5.1)ANIMATED SIDEBANNER ========== */
 .banner {
   background-color: #fff;
   color: #000;
-  position: absolute;
-  transform: translateX(300px) rotate(45deg);
+  position: relative;
+  left: 200px;
+  transform: rotate(45deg);
+  width: 1250px;
+  position: relative;
 }
 .banner h2 {
-  padding: 1vw 0;
-  animation: run 3s infinite linear;
+  padding: 1vw;
+  display: inline-block;
+  transform: translateX(100%);
+  animation: loop 6s infinite linear;
 }
 .banner h2 span {
-  -webkit-text-stroke: 0.01px #000;
+  -webkit-text-stroke: 1px #000;
   -webkit-text-fill-color: #fff;
 }
+.banner h2:last-of-type {
+  position: absolute;
+  top: auto;
+  left: 0px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
+  animation-delay: 3s;
+}
 
-/* ========== FOOTER ========== */
+/* ========== (3)FOOTER ========== */
 footer {
   background-color: #000;
   color: #fff;
@@ -280,31 +333,28 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 0 10vw 5vw;
-  position: relative;
-  z-index: 0;
 }
 footer section .socials img {
   width: 20px;
 }
-footer section .credits p {
-  margin-block: 1rem;
+footer section .socials img:hover {
+  cursor: pointer;
 }
 footer .sponsor img {
   width: 7vw;
 }
 
 /* ========== ANIMATIONS ========== */
-@keyframes run {
+/* banner animation -  (2.5)JOIN*/
+@keyframes loop {
   from {
-    transform: translate(0);
-  }
-  50% {
-    transform: translate(30%);
+    transform: translateX(100%);
   }
   to {
-    transform: translate(0);
+    transform: translateX(-100%);
   }
 }
+/* rotating cirlce animation - (2.3)GOLDEN BEAR */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
